@@ -23,7 +23,7 @@
     width: 100%;
     font-size: 1.25rem;
     font-weight: 500;
-    background: linear-gradient(180deg, #56ccf2, #2f80ed);
+    background: linear-gradient(180deg, #56ccf2, #2f80ed); /*แก้สี background navbar ระวังเรื่องไล่สี*/
     border-radius: 15px 15px 0 0;
     text-align: center
 }
@@ -113,6 +113,26 @@
     border-radius: 50%;
     animation: vibrate-1 2s linear infinite both;
 }
+	  @keyframes vibrate-1 {
+0% {
+    transform: translate(0);
+}
+20% {
+    transform: translate(-2px,2px);
+}
+40% {
+    transform: translate(-2px,-2px);
+}
+60% {
+    transform: translate(2px,2px);
+}
+80% {
+    transform: translate(2px,-2px);
+}
+100% {
+    transform: translate(0);
+}
+  }
 
 .-selected img{
     width: 115px !important;
