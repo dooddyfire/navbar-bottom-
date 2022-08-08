@@ -1,0 +1,743 @@
+<style>
+@import url(https://fonts.googleapis.com/css2?family=Mitr:wght@400&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Mitr:wght@300&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Sriracha&display=swap);
+
+
+#account-actions-mobile {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 11;
+    width: 100%
+}
+
+
+@media (min-width:768px) {
+    #account-actions-mobile {
+        display: none
+    }
+}
+
+#account-actions-mobile .-register-btn {
+    width: 100%;
+    font-size: 1.25rem;
+    font-weight: 500;
+    background: linear-gradient(180deg, #56ccf2, #2f80ed);
+    border-radius: 15px 15px 0 0;
+    text-align: center
+}
+
+#account-actions-mobile .-register-btn span {
+    display: inline-block;
+    color: #fff;
+    background: #fff -webkit-gradient(linear, 100% 0, 0 0, from(#fff), color-stop(.5, #2f80ed), to(#fff));
+    background-position: -200px top;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation-name: x-shimmer;
+    animation-name: x-shimmer;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite
+}
+
+@media (max-width:991.98px) {
+    #account-actions-mobile .-register-btn span {
+        -webkit-animation-duration: 2s;
+        animation-duration: 2s
+    }
+}
+
+@media (max-width:767.98px) {
+    #account-actions-mobile .-register-btn span {
+        width: 100%
+    }
+}
+
+#account-actions-mobile .-outer-wrapper {
+    display: flex;
+    align-items: flex-end
+}
+
+#account-actions-mobile .-left-wrapper,
+#account-actions-mobile .-right-wrapper {
+    display: flex;
+    align-items: flex-end;
+    flex: 1;
+    z-index: 2;
+    height: 70px;
+    padding-bottom: 6px;
+    background: linear-gradient(180deg, #125c4a, #082621);
+    border-top: 3px solid #ffd59a;
+    transition: -webkit-filter .2s;
+    transition: filter .2s;
+    transition: filter .2s, -webkit-filter .2s;
+}
+
+#account-actions-mobile .-center-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 5;
+    width: 74px;
+    height: 74px;
+    margin: 0 8px 16px;
+    padding-bottom: 8px;
+    color: #fff;
+    
+    border-radius: 50%;
+    
+}
+
+#account-actions-mobile .-center-wrapper .-selected,
+#account-actions-mobile .-center-wrapper .-selecting {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center
+}
+
+#account-actions-mobile .-center-wrapper .-selected {
+    transition: all .4s;
+    background-size: 450px;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    background-position: 0 0;
+    border-radius: 50%;
+    animation: vibrate-1 2s linear infinite both;
+}
+
+.-selected img{
+    width: 115px !important;
+    max-width: 115px !important;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+transform: translate(-50%,-50%);}
+
+
+#account-actions-mobile .-center-wrapper .-selected.-slot {
+    background-position: -93px 0
+}
+
+#account-actions-mobile .-center-wrapper .-selected.-skill-game {
+    background-position: -188px 0
+}
+
+#account-actions-mobile .-center-wrapper .-selected.-sport {
+    background-position: -282px -2px
+}
+
+#account-actions-mobile .-center-wrapper .-selected.-fishing-game {
+    background-position: -378px 0
+}
+
+#account-actions-mobile .-center-wrapper .-selected .-text {
+    font-size: 12px;
+    position: absolute;
+    bottom: 10px;
+    text-shadow: 0 6px 5px rgba(0, 0, 0, .4);
+    white-space: nowrap;
+}
+
+#account-actions-mobile .-center-wrapper .-selecting {
+    display: none
+}
+
+#account-actions-mobile .-center-wrapper .-selecting .-text {
+    font-size: .875rem;
+    line-height: 16px;
+    text-shadow: 0 6px 5px rgba(0, 0, 0, .4)
+}
+
+#account-actions-mobile .-center-wrapper .-selecting .-mark {
+    position: relative;
+    margin-top: 5px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 20px
+}
+
+#account-actions-mobile .-center-wrapper:hover {
+    color: #fff;
+    text-decoration: none
+}
+
+#account-actions-mobile .-fake-center-bg-wrapper {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    height: 50px;
+    transition: -webkit-filter .2s;
+    transition: filter .2s;
+    transition: filter .2s, -webkit-filter .2s;
+    overflow: hidden
+}
+
+#account-actions-mobile .-fake-center-bg-wrapper svg {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    height: 108px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%)
+}
+
+#account-actions-mobile .-fake-center-bg-wrapper svg path {
+    fill: url(#rectangleGradient)
+}
+
+#account-actions-mobile .-left-wrapper {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 22px
+}
+
+#account-actions-mobile .-right-wrapper {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 22px
+}
+
+#account-actions-mobile .-sub-menu-lobby-wrapper {
+    position: absolute;
+    flex-direction: row;
+    justify-content: center;
+    visibility: hidden;
+    top: -75px;
+    left: 50%;
+    z-index: 3;
+    opacity: 0;
+
+    -webkit-transform: translateX(-50%) translateY(200px) scaleY(2.5) scaleX(.2);
+    transform: translateX(-50%) translateY(200px) scaleY(2.5) scaleX(.2);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    transition: all .2s
+}
+
+#account-actions-mobile .-sub-menu-lobby-wrapper .nav-item .-text {
+    display: inline-block;
+    font-size: 10px;
+    line-height: 12px;
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px)
+}
+@media (max-width:991.98px) {
+    #account-actions-mobile .-sub-menu-lobby-wrapper .nav-item.-casino .-nav-icon-bg {
+        background-position: 3px
+    }
+}
+
+@media (max-width:360px) {
+    #account-actions-mobile .-sub-menu-lobby-wrapper .nav-item.-casino .-nav-icon-bg {
+        background-position: 0
+    }
+}
+
+@media (max-width:991.98px) {
+    #account-actions-mobile .-sub-menu-lobby-wrapper .nav-item.-slot .-nav-icon-bg {
+        background-position: -73px
+    }
+}
+
+@media (max-width:360px) {
+    #account-actions-mobile .-sub-menu-lobby-wrapper .nav-item.-slot .-nav-icon-bg {
+        background-position: -75px
+    }
+}
+
+@media (max-width:991.98px) {
+    #account-actions-mobile .-sub-menu-lobby-wrapper .nav-item.-skill-game .-nav-icon-bg {
+        background-position: -147px
+    }
+}
+
+@media (max-width:360px) {
+    #account-actions-mobile .-sub-menu-lobby-wrapper .nav-item.-skill-game .-nav-icon-bg {
+        top: -12px;
+        background-position: -150px
+    }
+}
+
+@media (max-width:360px) {
+    #account-actions-mobile .-sub-menu-lobby-wrapper .nav-item.-skill-game .-text {
+        -webkit-transform: translateY(-6px);
+        transform: translateY(-6px)
+    }
+}
+
+@media (max-width:991.98px) {
+    #account-actions-mobile .-sub-menu-lobby-wrapper .nav-item.-sport .-nav-icon-bg {
+        background-position: -221px
+    }
+}
+
+@media (max-width:360px) {
+    #account-actions-mobile .-sub-menu-lobby-wrapper .nav-item.-sport .-nav-icon-bg {
+        background-position: -224px
+    }
+}
+
+@media (max-width:991.98px) {
+    #account-actions-mobile .-sub-menu-lobby-wrapper .nav-item.-fishing-game .-nav-icon-bg {
+        background-position: -300px
+    }
+}
+
+@media (max-width:360px) {
+    #account-actions-mobile .-sub-menu-lobby-wrapper .nav-item.-fishing-game .-nav-icon-bg {
+        background-position: -303px
+    }
+}
+
+#account-actions-mobile .-sub-menu-lobby-wrapper .nav-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 66px;
+    height: 66px;
+    margin: 0 3px;
+    padding: 0;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(180deg, #393854, #131228);
+    border: 1px solid hsla(0, 0%, 100%, .6);
+    border-radius: 50%;
+    box-shadow: 0 0 10px hsla(0, 0%, 100%, .6)
+}
+
+#account-actions-mobile .-sub-menu-lobby-wrapper .nav-link .-nav-icon-bg {
+    background-size: 360px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 40px;
+    top: -15px;
+    position: relative
+}
+
+#account-actions-mobile .-sub-menu-lobby-wrapper .nav-link:focus {
+    outline: none;
+    text-decoration: none
+}
+
+@media screen and (max-width:360px) {
+    #account-actions-mobile .-sub-menu-lobby-wrapper .nav-item .-img {
+        margin-top: -15px;
+        width: 54px
+    }
+    #account-actions-mobile .-sub-menu-lobby-wrapper .nav-link {
+        width: 60px;
+        height: 60px;
+        margin: 0 2px
+    }
+}
+
+#account-actions-mobile .-item-wrapper {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    color: #fff;
+    position: relative;
+}
+
+.-ic-img img{
+    width: 50px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 0;
+    position: relative;
+}
+
+#account-actions-mobile .-item-wrapper .-textfooter {
+    
+font-size: .875rem;
+    
+color: #ffffff;
+    
+transition: color .2s;
+    
+position: absolute;
+    
+bottom: 0;
+    
+left: 50%;
+    
+transform: translateX(-50%);
+    
+white-space: nowrap;
+    
+margin: 0 auto;
+    
+margin-top: .25rem;
+}
+
+@media (max-width:575.98px) {
+    #account-actions-mobile .-item-wrapper .-textfooter {
+        font-size: .8rem
+    }
+}
+
+#account-actions-mobile .-item-wrapper:active,
+#account-actions-mobile .-item-wrapper:hover {
+    text-decoration: none
+}
+
+#account-actions-mobile .-item-wrapper:active .-text,
+#account-actions-mobile .-item-wrapper:hover .-text {
+    color: #f7d18e
+}
+
+#account-actions-mobile .-item-wrapper.-shimmer .-text {
+    display: inline-block;
+    color: #fff;
+    background: #97a7c1 -webkit-gradient(linear, 100% 0, 0 0, from(#97a7c1), color-stop(.5, #fff), to(#97a7c1));
+    background-position: -200px top;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation-name: x-shimmer;
+    animation-name: x-shimmer;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: x-shimmer-shorter;
+    animation-name: x-shimmer-shorter
+}
+
+@media (max-width:991.98px) {
+    #account-actions-mobile .-item-wrapper.-shimmer .-text {
+        -webkit-animation-duration: 2s;
+        animation-duration: 2s;
+        -webkit-animation-duration: 2.5s;
+        animation-duration: 2.5s
+    }
+}
+
+#account-actions-mobile .-fully-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: rgba(0, 0, 0, .6)
+}
+
+#account-actions-mobile.-active .-fake-center-bg-wrapper,
+#account-actions-mobile.-active .-left-wrapper,
+#account-actions-mobile.-active .-right-wrapper {
+    -webkit-filter: brightness(.5);
+    filter: brightness(.5)
+}
+
+#account-actions-mobile.-active .-fake-center-bg-wrapper a,
+#account-actions-mobile.-active .-left-wrapper a,
+#account-actions-mobile.-active .-right-wrapper a {
+    pointer-events: none
+}
+
+#account-actions-mobile.-active .-center-wrapper {
+    background: linear-gradient(0deg, rgba(251, 200, 68, .85), rgba(248, 128, 18, .85))
+}
+
+#account-actions-mobile.-active .-center-wrapper .-selected {
+    display: none
+}
+
+#account-actions-mobile.-active .-center-wrapper .-selecting {
+    display: flex
+}
+
+#account-actions-mobile.-active .-sub-menu-lobby-wrapper {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: translateX(-50%) translateY(0) scaleY(1) scaleX(1);
+    transform: translateX(-50%) translateY(0) scaleY(1) scaleX(1);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%
+}
+
+#account-actions-mobile.-active .-fully-overlay {
+    display: block
+}
+
+</style>
+
+
+
+<style id='elementor-frontend-inline-css' type='text/css'>
+@font-face{font-family:eicons;src:url(https://ideabet.org/theme/nolimit/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.eot?5.10.0);src:url(https://ideabet.org/theme/nolimit/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.eot?5.10.0#iefix) format("embedded-opentype"),url(https://ideabet.org/theme/nolimit/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.woff2?5.10.0) format("woff2"),url(https://ideabet.org/theme/nolimit/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.woff?5.10.0) format("woff"),url(https://ideabet.org/theme/nolimit/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.ttf?5.10.0) format("truetype"),url(https://ideabet.org/theme/nolimit/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.svg?5.10.0#eicon) format("svg");font-weight:400;font-style:normal}
+</style>
+
+
+
+
+<link rel='stylesheet' id='google-fonts-1-css'  href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&display=auto&ver=5.8.1' type='text/css' media='all' />
+
+
+
+
+
+
+<html lang="en-US" >
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>หน้าหลัก - ฝากถอนไม่มีขั้นต่ำ</title>
+
+
+<!-- Bootstrap CSS -->
+
+
+
+
+    <!-- Scrollbar Custom CSS -->
+
+
+<!-- Font Awesome JS -->
+
+
+<!-- Swiper -->
+
+
+<!-- AOS JS -->
+
+
+<!-- Our Custom CSS -->
+
+
+
+
+
+
+</head>
+
+
+
+<link rel='dns-prefetch' href='//s.w.org' />
+		
+
+
+
+
+
+<link rel='stylesheet' id='google-fonts-1-css'  href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&display=auto&ver=5.8.1' type='text/css' media='all' />
+
+
+<link rel="apple-touch-icon" href="https://ideabet.org/theme/nolimit/wp-content/uploads/2021/09/iconpng-300x300.png" />
+
+<style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+    </style>
+        
+    
+    <style id='kk-star-ratings-inline-css' type='text/css'>
+    .kk-star-ratings .kksr-stars .kksr-star {
+            margin-right: 4px;
+        }
+        [dir="rtl"] .kk-star-ratings .kksr-stars .kksr-star {
+            margin-left: 4px;
+            margin-right: 0;
+        }
+
+
+        @media (max-width:450px) {
+	.bankfooter h2 {
+		font-size: 4vw
+	}
+}
+
+.fxline {
+	position: fixed;
+	top: 50%;
+	right: 5px;
+	width: 110px;
+	height: auto;
+	z-index: 9;
+	cursor: pointer;
+	transition: all .3s
+}
+
+.fxline button {
+	padding-bottom: 1px;
+	padding: 5px 8px;
+	position: absolute;
+	top: -35px;
+	right: 0;
+	border: none;
+	background: #ff4b59;
+	color: #fff;
+	font-size: 20px;
+	transition: all .3s;
+	border-radius: 20px
+}
+
+.fxline button:hover {
+	color: #ff4b59;
+	background: #fff
+}
+
+.fxline i {
+	font-size: 20px
+}
+
+.fxline img {
+	width: 110px;
+	height: auto
+}
+
+.fxline:hover {
+	display: block;
+	-webkit-filter: drop-shadow(0 0 10px rgb(248 55 55));
+	filter: drop-shadow(0 0 10px rgb(248 68 55));
+	transition: -webkit-filter .3s;
+	transition: filter .3s;
+	transition: filter .3s, -webkit-filter .3s
+}
+
+.footersocial p {
+	margin: 0;
+	padding: 0;
+	font-size: 16px
+}
+
+.x-tab-hrft {
+	margin: 0;
+	border: none;
+	width: 100%;
+	height: 4px;
+	position: relative;
+	background: linear-gradient(90deg, #eb2a72, #851b43)
+}
+
+.footermobile {
+	display: none
+}
+
+@media (max-width:768px) {
+	.fxline {
+		display: none
+	}
+	.footermobile {
+		position: fixed;
+		display: block;
+		padding-top: 5px;
+		bottom: 0;
+		width: 100%;
+		height: 68px;
+		background: linear-gradient(168deg, #8a2626 0%, #371818e0 100%);
+		padding-bottom: 3px;
+		font-size: 14px;
+		border-top: 2px solid #f7d18e;
+		z-index: 5
+	}
+	.footermobile h5 {
+		position: absolute;
+		bottom: 3px;
+		font-weight: 100;
+		font-size: 16px;
+		left: 0;
+		right: 0;
+		margin: 0 auto
+	}
+	.footermobile td {
+		width: 20%;
+		height: 60px;
+		white-space: nowrap;
+		border-right: 1px solid #5f5f5f99;
+		transition: all .3s;
+		cursor: pointer;
+		position: relative;
+		vertical-align: top
+	}
+	.footermobile td:hover {
+		background: #0009;
+		border-radius: 10px
+	}
+	.footermobile img {
+		height: 34px!important;
+		width: auto;
+		margin: 0 auto;
+		display: block
+	}
+}
+
+    </style>
+    
+ 
+
+
+<body>
+   
+
+    <div class="x-button-actions" id="account-actions-mobile">
+        <div class="-outer-wrapper">
+           <div class="-left-wrapper">
+              <!--หน้าแรก-->
+              <span class="-item-wrapper"><span class="-ic-img"><a href="https://slot-5g.com/"><img width="400" height="448" src="https://slot-5g.com/wp-content/uploads/2022/08/Untitled-3_0.png" class="image wp-image-1537  attachment-full size-full" alt="" loading="lazy" style="max-width: 100%; height: auto;" srcset="https://mega-game.bz/wp-content/uploads/2022/08/Untitled-3_0.png 400w, https://mega-game.bz/wp-content/uploads/2022/08/Untitled-3_0-268x300.png 268w" sizes="(max-width: 400px) 100vw, 400px"></a></span>
+						 
+						 <!--เข้าสู่ระบบ-->
+						 </span><span class="-item-wrapper"><span class="-ic-img"><a href="#"><img width="400" height="448" src="https://slot-5g.com/wp-content/uploads/2022/08/Untitled-2_0.png" class="image wp-image-1538  attachment-full size-full" alt="" loading="lazy" style="max-width: 100%; height: auto;" srcset="https://mega-game.bz/wp-content/uploads/2022/08/Untitled-2_0.png 400w, https://mega-game.bz/wp-content/uploads/2022/08/Untitled-2_0-268x300.png 268w" sizes="(max-width: 400px) 100vw, 400px"></a></span></span>        
+           </div>
+					
+           <span class="-center-wrapper js-footer-lobby-selector js-menu-mobile-container">
+     	
+						 
+						 <!--แก้รูป Logo ตรงกลาง -->
+               <div class="-selected"><img width="512" height="512" src="https://slot-5g.com/wp-content/uploads/2022/08/cropped-logo.png" class="image wp-image-1503  attachment-full size-full" alt="" loading="lazy" style="max-width: 100%; height: auto;" srcset="https://slot-5g.com/wp-content/uploads/2022/08/cropped-logo.png 512w, https://slot-5g.com/wp-content/uploads/2022/08/cropped-logo.png-300x300.png 300w, https://slot-5g.com/wp-content/uploads/2022/08/cropped-logo.png-150x150.png 150w, https://slot-5g.com/wp-content/uploads/2022/08/cropped-logo.png-270x270.png 270w, https://mega-game.bz/wp-content/uploads/2022/08/cropped-Site-Icon-magagamebz-192x192.png 192w, https://mega-game.bz/wp-content/uploads/2022/08/cropped-Site-Icon-magagamebz-180x180.png 180w, https://mega-game.bz/wp-content/uploads/2022/08/cropped-Site-Icon-magagamebz-32x32.png 32w" sizes="(max-width: 512px) 100vw, 512px"></div>            
+           </span>
+           <div class="-fake-center-bg-wrapper">
+              <svg viewBox="-10 -1 30 12">
+                 <defs>
+                    <linearGradient id="rectangleGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                       <stop offset="0%" stop-color="#125c4a"></stop>
+                       <stop offset="100%" stop-color="#082621"></stop>
+                    </linearGradient>
+                 </defs>
+                 <path d="M-10 -1 H30 V12 H-10z M 5 5 m -5, 0 a 5,5 0 1,0 10,0 a 5,5 0 1,0 -10,0z"></path>
+              </svg>
+           </div>
+           <div class="-right-wrapper">
+              
+             <!--promotion-->
+             <span class="-item-wrapper"><span class="-ic-img"><a href="https://slot-5g.com/promotion/"><img width="400" height="448" src="https://slot-5g.com/wp-content/uploads/2022/08/Untitled-2.png" class="image wp-image-1522  attachment-full size-full" alt="" loading="lazy" style="max-width: 100%; height: auto;" srcset="https://mega-game.bz/wp-content/uploads/2022/08/Untitled-2.png 400w, https://mega-game.bz/wp-content/uploads/2022/08/Untitled-2-268x300.png 268w" sizes="(max-width: 400px) 100vw, 400px"></a></span></span>
+						 
+						 <!--ติดต่อเรา-->
+						 <span class="-item-wrapper"><span class="-ic-img"><a href="https://slot-5g.com/%e0%b8%95%e0%b8%b4%e0%b8%94%e0%b8%95%e0%b9%88%e0%b8%ad%e0%b9%80%e0%b8%a3%e0%b8%b2/"><img width="400" height="448" src="https://slot-5g.com/wp-content/uploads/2022/08/Untitled-4_0.png" class="image wp-image-1536  attachment-full size-full" alt="" loading="lazy" style="max-width: 100%; height: auto;" srcset="https://mega-game.bz/wp-content/uploads/2022/08/Untitled-4_0.png 400w, https://mega-game.bz/wp-content/uploads/2022/08/Untitled-4_0-268x300.png 268w" sizes="(max-width: 400px) 100vw, 400px"></a></span></span>
+     
+     
+           </div>
+           <div class="-fully-overlay js-footer-lobby-overlay"></div>
+        </div>
+     </div>
+     
+    </body>
