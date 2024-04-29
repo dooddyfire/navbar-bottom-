@@ -1,19 +1,22 @@
-<style>
+<p><style>
 @import url(https://fonts.googleapis.com/css2?family=Mitr:wght@400&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Mitr:wght@300&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Sriracha&display=swap);
+
+
+/* Footer Mobile */
+
 
 
 #account-actions-mobile {
     position: fixed;
     left: 0;
     bottom: 0;
-    z-index: 11;
+    z-index: 101;
     width: 100%
 }
 
-
-@media (min-width:768px) {
+@media (min-width:1025px) {
     #account-actions-mobile {
         display: none
     }
@@ -23,7 +26,7 @@
     width: 100%;
     font-size: 1.25rem;
     font-weight: 500;
-    background: linear-gradient(180deg, #56ccf2, #2f80ed); /*แก้สี background navbar ระวังเรื่องไล่สี*/
+    background: linear-gradient(180deg, #56ccf2, #2f80ed);
     border-radius: 15px 15px 0 0;
     text-align: center
 }
@@ -70,8 +73,8 @@
     z-index: 2;
     height: 70px;
     padding-bottom: 6px;
-    background: linear-gradient(180deg, #125c4a, #082621);
-    border-top: 3px solid #ffd59a;
+    background: linear-gradient(#383d44, #141617);  /* แก้สี ไล่ gradient หลัก*/
+    border-top: 3px solid #f4eb9a; /*แก้สีขอบ*/
     transition: -webkit-filter .2s;
     transition: filter .2s;
     transition: filter .2s, -webkit-filter .2s;
@@ -83,15 +86,41 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    z-index: 5;
+    z-index: 4;
     width: 74px;
     height: 74px;
     margin: 0 8px 16px;
     padding-bottom: 8px;
     color: #fff;
-    
     border-radius: 50%;
-    
+    background: linear-gradient(182deg, #ffd81a, #b57700); /* แก้สี gradient วงกลมตรงกลาง*/
+    animation: x-jello-horizontal 3s infinite both;
+}
+@keyframes x-jello-horizontal {
+  0% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+5% {
+    -webkit-transform: scale3d(1.25, .75, 1);
+    transform: scale3d(1.25, .75, 1);
+}
+7.5% {
+    -webkit-transform: scale3d(.75, 1.25, 1);
+    transform: scale3d(.75, 1.25, 1);
+}
+10% {
+    -webkit-transform: scale3d(1.15, .85, 1);
+    transform: scale3d(1.15, .85, 1);
+}
+15% {
+    -webkit-transform: scale3d(.95, 1.05, 1);
+    transform: scale3d(.95, 1.05, 1);
+}
+20% {
+    -webkit-transform: scale3d(1.05, .95, 1);
+    transform: scale3d(1.05, .95, 1);
+}
 }
 
 #account-actions-mobile .-center-wrapper .-selected,
@@ -111,39 +140,36 @@
     width: 100%;
     background-position: 0 0;
     border-radius: 50%;
-    animation: vibrate-1 2s linear infinite both;
 }
-	  @keyframes vibrate-1 {
-0% {
-    transform: translate(0);
-}
-20% {
-    transform: translate(-2px,2px);
-}
-40% {
-    transform: translate(-2px,-2px);
-}
-60% {
-    transform: translate(2px,2px);
-}
-80% {
-    transform: translate(2px,-2px);
-}
-100% {
-    transform: translate(0);
-}
-  }
-
 .-selected img{
-    width: 115px !important;
-    max-width: 115px !important;
+    width: 85px !important;
+    max-width: inherit !important;
     height: auto;
     position: absolute;
     top: 50%;
     left: 50%;
-transform: translate(-50%,-50%);}
-
-
+    transform: translate(-50%,-50%);
+}
+.-selected img{
+    width: 77px !important;
+    max-width: 77px !important;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin-top: -24px;
+}
+.-selected span{
+  position:absolute;
+  font-size: 13px;
+  bottom: 4px;
+  font-weight: 300;
+  display: block;
+}
+.-selected span a{
+  color: white;
+}
 #account-actions-mobile .-center-wrapper .-selected.-slot {
     background-position: -93px 0
 }
@@ -251,6 +277,7 @@ transform: translate(-50%,-50%);}
     -webkit-transform: translateY(-10px);
     transform: translateY(-10px)
 }
+
 @media (max-width:991.98px) {
     #account-actions-mobile .-sub-menu-lobby-wrapper .nav-item.-casino .-nav-icon-bg {
         background-position: 3px
@@ -373,11 +400,11 @@ transform: translate(-50%,-50%);}
 }
 
 .-ic-img img{
-    width: 50px;
+    width: 34px;
     height: auto;
     display: block;
     margin: 0 auto;
-    padding-bottom: 0;
+    padding-bottom: 20px;
     position: relative;
 }
 
@@ -403,7 +430,13 @@ margin: 0 auto;
     
 margin-top: .25rem;
 }
-
+#account-actions-mobile .-item-wrapper .-textfooter a{
+  color:white;
+  text-decoration:none;
+}
+#account-actions-mobile .-item-wrapper:hover a{
+  text-shadow:0 0 5px white,0 0 15px white,0 0 35px white,0 0 45px white;
+}
 @media (max-width:575.98px) {
     #account-actions-mobile .-item-wrapper .-textfooter {
         font-size: .8rem
@@ -496,268 +529,59 @@ margin-top: .25rem;
     display: block
 }
 
-</style>
 
 
+/* Footer Mobile */
 
-<style id='elementor-frontend-inline-css' type='text/css'>
-@font-face{font-family:eicons;src:url(https://ideabet.org/theme/nolimit/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.eot?5.10.0);src:url(https://ideabet.org/theme/nolimit/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.eot?5.10.0#iefix) format("embedded-opentype"),url(https://ideabet.org/theme/nolimit/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.woff2?5.10.0) format("woff2"),url(https://ideabet.org/theme/nolimit/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.woff?5.10.0) format("woff"),url(https://ideabet.org/theme/nolimit/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.ttf?5.10.0) format("truetype"),url(https://ideabet.org/theme/nolimit/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.svg?5.10.0#eicon) format("svg");font-weight:400;font-style:normal}
-</style>
-
-
-
-
-<link rel='stylesheet' id='google-fonts-1-css'  href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&display=auto&ver=5.8.1' type='text/css' media='all' />
-
-
-
-
-
-
-<html lang="en-US" >
-
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-<title>หน้าหลัก - ฝากถอนไม่มีขั้นต่ำ</title>
-
-
-<!-- Bootstrap CSS -->
-
-
-
-
-    <!-- Scrollbar Custom CSS -->
-
-
-<!-- Font Awesome JS -->
-
-
-<!-- Swiper -->
-
-
-<!-- AOS JS -->
-
-
-<!-- Our Custom CSS -->
-
-
-
-
-
-
-</head>
-
-
-
-<link rel='dns-prefetch' href='//s.w.org' />
-		
-
-
-
-
-
-<link rel='stylesheet' id='google-fonts-1-css'  href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&display=auto&ver=5.8.1' type='text/css' media='all' />
-
-
-<link rel="apple-touch-icon" href="https://ideabet.org/theme/nolimit/wp-content/uploads/2021/09/iconpng-300x300.png" />
-
-<style type="text/css">
-    img.wp-smiley,
-    img.emoji {
-        display: inline !important;
-        border: none !important;
-        box-shadow: none !important;
-        height: 1em !important;
-        width: 1em !important;
-        margin: 0 .07em !important;
-        vertical-align: -0.1em !important;
-        background: none !important;
-        padding: 0 !important;
-    }
-    </style>
-        
-    
-    <style id='kk-star-ratings-inline-css' type='text/css'>
-    .kk-star-ratings .kksr-stars .kksr-star {
-            margin-right: 4px;
-        }
-        [dir="rtl"] .kk-star-ratings .kksr-stars .kksr-star {
-            margin-left: 4px;
-            margin-right: 0;
-        }
-
-
-        @media (max-width:450px) {
-	.bankfooter h2 {
-		font-size: 4vw
-	}
-}
-
-.fxline {
-	position: fixed;
-	top: 50%;
-	right: 5px;
-	width: 110px;
-	height: auto;
-	z-index: 9;
-	cursor: pointer;
-	transition: all .3s
-}
-
-.fxline button {
-	padding-bottom: 1px;
-	padding: 5px 8px;
-	position: absolute;
-	top: -35px;
-	right: 0;
-	border: none;
-	background: #ff4b59;
-	color: #fff;
-	font-size: 20px;
-	transition: all .3s;
-	border-radius: 20px
-}
-
-.fxline button:hover {
-	color: #ff4b59;
-	background: #fff
-}
-
-.fxline i {
-	font-size: 20px
-}
-
-.fxline img {
-	width: 110px;
-	height: auto
-}
-
-.fxline:hover {
-	display: block;
-	-webkit-filter: drop-shadow(0 0 10px rgb(248 55 55));
-	filter: drop-shadow(0 0 10px rgb(248 68 55));
-	transition: -webkit-filter .3s;
-	transition: filter .3s;
-	transition: filter .3s, -webkit-filter .3s
-}
-
-.footersocial p {
-	margin: 0;
-	padding: 0;
-	font-size: 16px
-}
-
-.x-tab-hrft {
-	margin: 0;
-	border: none;
-	width: 100%;
-	height: 4px;
-	position: relative;
-	background: linear-gradient(90deg, #eb2a72, #851b43)
-}
-
-.footermobile {
-	display: none
-}
-
-@media (max-width:768px) {
-	.fxline {
-		display: none
-	}
-	.footermobile {
-		position: fixed;
-		display: block;
-		padding-top: 5px;
-		bottom: 0;
-		width: 100%;
-		height: 68px;
-		background: linear-gradient(168deg, #8a2626 0%, #371818e0 100%);
-		padding-bottom: 3px;
-		font-size: 14px;
-		border-top: 2px solid #f7d18e;
-		z-index: 5
-	}
-	.footermobile h5 {
-		position: absolute;
-		bottom: 3px;
-		font-weight: 100;
-		font-size: 16px;
-		left: 0;
-		right: 0;
-		margin: 0 auto
-	}
-	.footermobile td {
-		width: 20%;
-		height: 60px;
-		white-space: nowrap;
-		border-right: 1px solid #5f5f5f99;
-		transition: all .3s;
-		cursor: pointer;
-		position: relative;
-		vertical-align: top
-	}
-	.footermobile td:hover {
-		background: #0009;
-		border-radius: 10px
-	}
-	.footermobile img {
-		height: 34px!important;
-		width: auto;
-		margin: 0 auto;
-		display: block
-	}
-}
 
     </style>
-    
- 
 
+<div class="x-button-actions" id="account-actions-mobile">
+   <div class="-outer-wrapper">
+      <div class="-left-wrapper">
+         
 
-<body>
-   
+		  
+		  <!-- เข้าสู่ระบบ --> 
+         <span class="-item-wrapper"><span class="-ic-img"><span class="-textfooter d-block"><a href="https://betflixpower.com/login">เข้าสู่ระบบ</a></span><a href="#"><img width="150" height="150" src="https://ideabet.live/theme/slotvip/wp-content/uploads/2023/10/ic-menu-login-animate-1.png" class="image wp-image-4827  attachment-full size-full" alt="" style="max-width: 100%; height: auto;" decoding="async" loading="lazy"></a></span></span>
+		  
+		  <!-- สมัครสมาชิก --> 
+		  <span class="-item-wrapper"><span class="-ic-img"><span class="-textfooter d-block"><a href="#">สมัคร</a></span><a href="https://betflixpower.com/register"><img width="50" height="50" src="https://ideabet.live/theme/slotvip/wp-content/uploads/2023/10/ic-menu-register.png" class="image wp-image-4828  attachment-full size-full" alt="" style="max-width: 100%; height: auto;" decoding="async" loading="lazy"></a></span></span>
+		  <!-- สมัคร สมาชิก-->
+		  
+      </div>
+      <span class="-center-wrapper js-footer-lobby-selector js-menu-mobile-container">
 
-    <div class="x-button-actions" id="account-actions-mobile">
-        <div class="-outer-wrapper">
-           <div class="-left-wrapper">
-              <!--หน้าแรก-->
-              <span class="-item-wrapper"><span class="-ic-img"><a href="https://slot-5g.com/"><img width="400" height="448" src="https://slot-5g.com/wp-content/uploads/2022/08/Untitled-3_0.png" class="image wp-image-1537  attachment-full size-full" alt="" loading="lazy" style="max-width: 100%; height: auto;" srcset="https://mega-game.bz/wp-content/uploads/2022/08/Untitled-3_0.png 400w, https://mega-game.bz/wp-content/uploads/2022/08/Untitled-3_0-268x300.png 268w" sizes="(max-width: 400px) 100vw, 400px"></a></span>
-						 
-						 <!--เข้าสู่ระบบ-->
-						 </span><span class="-item-wrapper"><span class="-ic-img"><a href="#"><img width="400" height="448" src="https://slot-5g.com/wp-content/uploads/2022/08/Untitled-2_0.png" class="image wp-image-1538  attachment-full size-full" alt="" loading="lazy" style="max-width: 100%; height: auto;" srcset="https://mega-game.bz/wp-content/uploads/2022/08/Untitled-2_0.png 400w, https://mega-game.bz/wp-content/uploads/2022/08/Untitled-2_0-268x300.png 268w" sizes="(max-width: 400px) 100vw, 400px"></a></span></span>        
-           </div>
-					
-           <span class="-center-wrapper js-footer-lobby-selector js-menu-mobile-container">
-     	
-						 
-						 <!--แก้รูป Logo ตรงกลาง -->
-               <div class="-selected"><img width="512" height="512" src="https://slot-5g.com/wp-content/uploads/2022/08/cropped-logo.png" class="image wp-image-1503  attachment-full size-full" alt="" loading="lazy" style="max-width: 100%; height: auto;" srcset="https://slot-5g.com/wp-content/uploads/2022/08/cropped-logo.png 512w, https://slot-5g.com/wp-content/uploads/2022/08/cropped-logo.png-300x300.png 300w, https://slot-5g.com/wp-content/uploads/2022/08/cropped-logo.png-150x150.png 150w, https://slot-5g.com/wp-content/uploads/2022/08/cropped-logo.png-270x270.png 270w, https://mega-game.bz/wp-content/uploads/2022/08/cropped-Site-Icon-magagamebz-192x192.png 192w, https://mega-game.bz/wp-content/uploads/2022/08/cropped-Site-Icon-magagamebz-180x180.png 180w, https://mega-game.bz/wp-content/uploads/2022/08/cropped-Site-Icon-magagamebz-32x32.png 32w" sizes="(max-width: 512px) 100vw, 512px"></div>            
-           </span>
-           <div class="-fake-center-bg-wrapper">
-              <svg viewBox="-10 -1 30 12">
-                 <defs>
-                    <linearGradient id="rectangleGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                       <stop offset="0%" stop-color="#125c4a"></stop>
-                       <stop offset="100%" stop-color="#082621"></stop>
-                    </linearGradient>
-                 </defs>
-                 <path d="M-10 -1 H30 V12 H-10z M 5 5 m -5, 0 a 5,5 0 1,0 10,0 a 5,5 0 1,0 -10,0z"></path>
-              </svg>
-           </div>
-           <div class="-right-wrapper">
-              
-             <!--promotion-->
-             <span class="-item-wrapper"><span class="-ic-img"><a href="https://slot-5g.com/promotion/"><img width="400" height="448" src="https://slot-5g.com/wp-content/uploads/2022/08/Untitled-2.png" class="image wp-image-1522  attachment-full size-full" alt="" loading="lazy" style="max-width: 100%; height: auto;" srcset="https://mega-game.bz/wp-content/uploads/2022/08/Untitled-2.png 400w, https://mega-game.bz/wp-content/uploads/2022/08/Untitled-2-268x300.png 268w" sizes="(max-width: 400px) 100vw, 400px"></a></span></span>
-						 
-						 <!--ติดต่อเรา-->
-						 <span class="-item-wrapper"><span class="-ic-img"><a href="https://slot-5g.com/%e0%b8%95%e0%b8%b4%e0%b8%94%e0%b8%95%e0%b9%88%e0%b8%ad%e0%b9%80%e0%b8%a3%e0%b8%b2/"><img width="400" height="448" src="https://slot-5g.com/wp-content/uploads/2022/08/Untitled-4_0.png" class="image wp-image-1536  attachment-full size-full" alt="" loading="lazy" style="max-width: 100%; height: auto;" srcset="https://mega-game.bz/wp-content/uploads/2022/08/Untitled-4_0.png 400w, https://mega-game.bz/wp-content/uploads/2022/08/Untitled-4_0-268x300.png 268w" sizes="(max-width: 400px) 100vw, 400px"></a></span></span>
-     
-     
-           </div>
-           <div class="-fully-overlay js-footer-lobby-overlay"></div>
-        </div>
-     </div>
-     
-    </body>
+		  
+		  <!-- Center Logo --> 
+          <div class="-selected"><span><a href="#">เข้าเล่น</a></span><a href="#"><img width="121" height="121" src="https://ideabet.live/theme/slotvip/wp-content/uploads/2023/10/menu.png" class="image wp-image-4829  attachment-full size-full" alt="" style="max-width: 100%; height: auto;" decoding="async" loading="lazy"></a></div>            
+      </span>
+<!-- End Center Logo --> 
+	   
+	   
+	   
+      <div class="-fake-center-bg-wrapper">
+         <svg viewBox="-10 -1 30 12">
+            <defs>
+               <linearGradient id="rectangleGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#383d44"></stop>
+                  <stop offset="100%" stop-color="#141617"></stop>
+               </linearGradient>
+            </defs>
+            <path d="M-10 -1 H30 V12 H-10z M 5 5 m -5, 0 a 5,5 0 1,0 10,0 a 5,5 0 1,0 -10,0z"></path>
+         </svg>
+      </div>
+      <div class="-right-wrapper">
+         
+		  <!-- Promotion--> 
+         <span class="-item-wrapper"><span class="-ic-img"><span class="-textfooter d-block">โปรโมชั่น</span><a href="https://betflixpower.com/%e0%b9%82%e0%b8%9b%e0%b8%a3%e0%b9%82%e0%b8%a1%e0%b8%8a%e0%b8%b1%e0%b9%88%e0%b8%99/"><img width="258" height="257" src="https://ideabet.live/theme/slotvip/wp-content/uploads/2023/10/tab_promotion-1.png" class="image wp-image-4831  attachment-full size-full" alt="" style="max-width: 100%; height: auto;" decoding="async" loading="lazy" srcset="https://ideabet.live/theme/slotvip/wp-content/uploads/2023/10/tab_promotion-1.png 258w, https://ideabet.live/theme/slotvip/wp-content/uploads/2023/10/tab_promotion-1-150x150.png 150w" sizes="(max-width: 258px) 100vw, 258px"></a></span></span>
+	 <!-- End Promotion --> 
+		  
+<!-- ติดต่อเรา --> 		  
+		  <span class="-item-wrapper"><span class="-ic-img"><span class="-textfooter d-block">ติดต่อเรา</span><a href="https://line.me/ti/p/@ufa888pro"><img width="123" height="122" src="https://ideabet.live/theme/slotvip/wp-content/uploads/2023/10/support.png" class="image wp-image-4830  attachment-full size-full" alt="" style="max-width: 100%; height: auto;" decoding="async" loading="lazy"></a></span></span>
+		  <!-- ติดต่อเรา --> 
+		  
+      </div>
+      <div class="-fully-overlay js-footer-lobby-overlay"></div>
+   </div>
+</div>
